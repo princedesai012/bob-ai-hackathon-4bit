@@ -1,47 +1,38 @@
-# Source Code
+# Source Code Directory Layout — SupplyShield AI
 
-Place all your project's source code in this folder.
+This directory contains the entire full-stack application source code for **SupplyShield AI**.
 
-## Structure Guidelines
+## Directory Architecture
 
-Organize your code logically. Here are common patterns — use whatever fits
-your project:
-
-### Web Application
 ```
 src/
-  backend/        ← API server code
-  frontend/       ← UI code
-  shared/         ← Shared utilities/types
+├── backend/                  # Node.js + Express REST API Server
+│   ├── controllers/          # Request handlers (auth, dashboard, disruptions, shipments, fleet, cold-chain, copilot, recovery)
+│   ├── data/                 # In-memory relational data store (pre-seeded with realistic disruptions & shipments)
+│   ├── routes/               # API route definitions
+│   ├── services/             # Business logic (risk scoring engine, AI fallback provider, impact graph)
+│   ├── package.json          # Backend dependencies (Express 5, dotenv, cors, nodemon)
+│   └── server.js             # API server entrypoint (port 5000)
+│
+├── frontend/                 # React 19 + Vite Modern Web Dashboard
+│   ├── public/               # Static assets and icons
+│   ├── src/
+│   │   ├── components/       # Reusable UI components (Layout, Badges, Modals, Risk Indicators)
+│   │   ├── context/          # State management (AuthContext)
+│   │   ├── pages/            # View pages (Dashboard, Disruptions, Shipments, Fleet, ColdChain, Recovery, Copilot)
+│   │   ├── routes/           # AppRouter and route definitions
+│   │   ├── services/         # Axios API client bindings
+│   │   ├── App.jsx           # Root application component
+│   │   ├── main.jsx          # DOM mount entrypoint
+│   │   └── index.css         # TailwindCSS v4 design tokens and styles
+│   ├── package.json          # Frontend dependencies (React 19, Lucide icons, Recharts, TailwindCSS)
+│   └── vite.config.js        # Vite build and proxy configuration
+│
+└── .env.example              # Environment variables template
 ```
 
-### Data / AI Project
-```
-src/
-  data/           ← Data ingestion / preprocessing
-  models/         ← ML model code
-  api/            ← Serving layer
-  notebooks/      ← Jupyter notebooks (exploration)
-```
+## Running the Application
 
-### CLI / Script-based Tool
-```
-src/
-  cli/            ← CLI entry points
-  lib/            ← Core logic
-  utils/          ← Helpers
-```
-
-## Important Files to Include
-
-- `requirements.txt` or `package.json` — dependency manifest
-- `.env.example` — template for environment variables (NEVER commit `.env`)
-- Any database migration files
-- Configuration files
-
-## What NOT to Include in src/
-
-- `.env` files with real secrets
-- Large binary files (use Git LFS or link externally)
-- `node_modules/` or `venv/` (these are in `.gitignore`)
-- Build artifacts (`dist/`, `build/`, `__pycache__/`)
+Follow the detailed instructions in [docs/setup-guide.md](../docs/setup-guide.md) to start both services.
+- **Backend API**: Runs on `http://localhost:5000`
+- **Frontend UI**: Runs on `http://localhost:5173`

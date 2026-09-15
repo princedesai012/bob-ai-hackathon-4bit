@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SupplyShield AI — Presentation Deck</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 297mm;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #ffffff;
+      color: #0f172a;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .slide {
+      width: 297mm;
+      height: 210mm;
+      padding: 16mm 20mm;
+      position: relative;
+      background: #ffffff;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    /* Cover Slide */
+    .slide-cover {
+      background: linear-gradient(135deg, #091224 0%, #1e293b 60%, #0f172a 100%);
+      color: #ffffff;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 22mm 24mm;
+    }
+
+    .badge-track {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.25);
+      border: 1px solid #3b82f6;
+      color: #93c5fd;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 16px;
+    }
+
+    .cover-title {
+      font-size: 46px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 14px;
+      background: linear-gradient(90deg, #ffffff 40%, #60a5fa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cover-subtitle {
+      font-size: 17px;
+      color: #94a3b8;
+      max-width: 240mm;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .team-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 16px 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .member-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+
+    .member-id {
+      font-size: 12px;
+      color: #38bdf8;
+      font-family: monospace;
+      font-weight: 600;
+    }
+
+    .member-email {
+      font-size: 11px;
+      color: #94a3b8;
+      word-break: break-all;
+    }
+
+    /* Standard Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+    }
+
+    .slide-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .slide-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 4px;
+    }
+
+    .brand-mark {
+      font-size: 14px;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .slide-content {
+      flex: 1;
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card-dark {
+      background: #0f172a;
+      color: #ffffff;
+      border: 1px solid #334155;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-dark .card-title {
+      color: #f8fafc;
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .card-dark .card-body {
+      color: #cbd5e1;
+    }
+
+    ul.clean-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    ul.clean-list li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: #334155;
+    }
+
+    ul.clean-list li::before {
+      content: "•";
+      color: #2563eb;
+      font-size: 20px;
+      position: absolute;
+      left: 4px;
+      top: -4px;
+    }
+
+    .card-dark ul.clean-list li {
+      color: #e2e8f0;
+    }
+
+    .stat-number {
+      font-size: 32px;
+      font-weight: 800;
+      color: #2563eb;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .slide-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: Title -->
+  <div class="slide slide-cover">
+    <div>
+      <div class="badge-track">BOB AI HACKATHON — AI TRACK</div>
+      <h1 class="cover-title">SupplyShield AI</h1>
+      <p class="cover-subtitle">Proactive Supply Chain Incident Command Center with Real-Time Risk Scoring, Cold Chain Safeguards, and Automated Recovery Rerouting</p>
+    </div>
+    <div class="team-box">
+      <div class="team-member">
+        <div class="member-name">Prince Desai (Lead)</div>
+        <div class="member-id">23DCE024</div>
+        <div class="member-email">23DCE024@charusat.edu.in</div>
+      </div>
+      <div class="team-member">
+        <div class="member-name">Rishi Sheladiya</div>
+        <div class="member-id">23CE132</div>
+        <div class="member-email">23CE132@charusat.edu.in</div>
+      </div>
+      <div class="team-member">
+        <div class="member-name">Deep Ardeshna</div>
+        <div class="member-id">23DCE004</div>
+        <div class="member-email">23DCE004@charusat.edu.in</div>
+      </div>
+      <div class="team-member">
+        <div class="member-name">Pujan Desai</div>
+        <div class="member-id">23DCE026</div>
+        <div class="member-email">23DCE026@charusat.edu.in</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: Problem Statement -->
+  <div class="slide">
+    <div class="slide-header">
+      <div>
+        <div class="slide-num">01 / Challenge</div>
+        <h2 class="slide-title">Problem — Who, What, and Why It Hurts</h2>
+      </div>
+      <div class="brand-mark">SupplyShield AI</div>
+    </div>
+    <div class="slide-content grid-3">
+      <div class="card">
+        <div class="card-title">👤 The Target Audience</div>
+        <div class="card-body">
+          <p>Global supply chain directors, port operations commanders, pharmaceutical logistics managers, and multi-modal fleet coordinators managing high-value, time-critical international cargo.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">⚠️ The Core Problem</div>
+        <div class="card-body">
+          <p>Global transit routes face unpredictable disruptions—port strikes, canal blockages, extreme snowstorms. Data is siloed in legacy ERPs, radar feeds, and email chains with zero automated correlation.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">💥 Quantified Pain</div>
+        <div class="card-body">
+          <p><strong>$10B+</strong> annual freight delay penalties.<br><br>
+          <strong>4.5 Hours MTTR:</strong> Average time lost manually cross-referencing spreadsheets.<br><br>
+          <strong>Irreversible Spoilage:</strong> High-value biological medicines ruined during transit delays.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>Team 4bit</span>
+      <span>Slide 2</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Solution Overview -->
+  <div class="slide">
+    <div class="slide-header">
+      <div>
+        <div class="slide-num">02 / Solution</div>
+        <h2 class="slide-title">Solution — What We Built & How It Works</h2>
+      </div>
+      <div class="brand-mark">SupplyShield AI</div>
+    </div>
+    <div class="slide-content grid-2">
+      <div class="card card-dark">
+        <div class="card-title">🛡️ Intelligent Command Center</div>
+        <div class="card-body">
+          <ul class="clean-list">
+            <li><strong>Aggregated Disruption Hub:</strong> Continuous ingestion of port closures, weather alerts, and strikes mapped against global transit corridors.</li>
+            <li><strong>Dynamic Risk Engine:</strong> Continuous scoring (0–100) weighting priority, disruption proximity, delivery SLA deadlines, and IoT thermal telemetry.</li>
+            <li><strong>Automated Recovery Workspace:</strong> Real-time alternative route generation, cost/time trade-off simulation, and carrier assignment.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">⚡ The AI Copilot Differentiator</div>
+        <div class="card-body">
+          <ul class="clean-list">
+            <li><strong>Real-time Data Querying:</strong> Query active disruptions and critical shipments through natural language.</li>
+            <li><strong>Context-Aware Interventions:</strong> Evaluates fleet availability (including refrigerated vehicles) to dispatch mitigation orders in seconds.</li>
+            <li><strong>Explainable Risk Factors:</strong> Transparent breakdown of each risk rating rather than a black-box percentage.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>Team 4bit</span>
+      <span>Slide 3</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: Architecture & Highlights -->
+  <div class="slide">
+    <div class="slide-header">
+      <div>
+        <div class="slide-num">03 / Engineering</div>
+        <h2 class="slide-title">Demo & Architecture — Technical Highlights</h2>
+      </div>
+      <div class="brand-mark">SupplyShield AI</div>
+    </div>
+    <div class="slide-content grid-3">
+      <div class="card">
+        <div class="stat-number">React 19</div>
+        <div class="stat-label">Modern Frontend</div>
+        <div class="card-body">Vite + TailwindCSS v4 with Recharts dynamic data visualizers, responsive KPI gauges, and real-time interactive alert cards.</div>
+      </div>
+      <div class="card">
+        <div class="stat-number">Express 5</div>
+        <div class="stat-label">High-Speed Backend</div>
+        <div class="card-body">RESTful architecture with modular controllers, schema validation, and complete in-memory relational store running zero-config out of the box.</div>
+      </div>
+      <div class="card">
+        <div class="stat-number">0-100</div>
+        <div class="stat-label">Deterministic Risk Matrix</div>
+        <div class="card-body">Multi-factor algorithmic engine scoring priority (+20), disruption (+40), deadline compression (+30), and thermal excursion (+40).</div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>Team 4bit</span>
+      <span>Slide 4</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: IBM Technology Integration -->
+  <div class="slide">
+    <div class="slide-header">
+      <div>
+        <div class="slide-num">04 / IBM Integration</div>
+        <h2 class="slide-title">IBM Technology Integration — Bob & watsonx</h2>
+      </div>
+      <div class="brand-mark">SupplyShield AI</div>
+    </div>
+    <div class="slide-content grid-2">
+      <div class="card card-dark">
+        <div class="card-title">🤖 IBM Bob (AI SDLC Partner)</div>
+        <div class="card-body">
+          <ul class="clean-list">
+            <li><strong>Plan Mode Architecture:</strong> Designed relational data models linking disruptions, multi-modal routes, and cold-chain shipments.</li>
+            <li><strong>Agent Mode Execution:</strong> Generated modular Express 5 API controllers, seed datasets, and comprehensive verification test scripts.</li>
+            <li><strong>Code Review & Optimization:</strong> Enforced clean architecture, structured error handlers, and zero-dependency reproducibility.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">🧠 IBM watsonx.ai Granite 3.0</div>
+        <div class="card-body">
+          <ul class="clean-list">
+            <li><strong>Conversational Copilot:</strong> Architectural integration with IBM watsonx.ai Granite 3.0 foundation models for supply chain root-cause analysis.</li>
+            <li><strong>Domain Summarization:</strong> Summarizes complex multi-modal disruptions and formulates natural language operator briefs.</li>
+            <li><strong>Resilient Architecture:</strong> Implements an in-memory rule fallback mechanism ensuring full functionality even in offline demo modes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>Team 4bit</span>
+      <span>Slide 5</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: Impact & Beyond -->
+  <div class="slide">
+    <div class="slide-header">
+      <div>
+        <div class="slide-num">05 / Vision</div>
+        <h2 class="slide-title">Impact — Beyond the Hackathon</h2>
+      </div>
+      <div class="brand-mark">SupplyShield AI</div>
+    </div>
+    <div class="slide-content grid-3">
+      <div class="card">
+        <div class="stat-number">65%</div>
+        <div class="stat-label">Faster Incident Resolution</div>
+        <div class="card-body">Reduces average incident MTTR from 4.5 hours to under 30 minutes with one-click automated recovery simulation and carrier redeployment.</div>
+      </div>
+      <div class="card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Cold-Chain Visibility</div>
+        <div class="card-body">Continuous thermal tracking prevents costly spoilage of vital vaccines, pharmaceutical blood plasma, and temperature-sensitive biologicals.</div>
+      </div>
+      <div class="card">
+        <div class="stat-number">Roadmap</div>
+        <div class="stat-label">Production Evolution</div>
+        <div class="card-body">
+          • MQTT/IoT live telematics ingestion<br>
+          • Cloud deployment on Red Hat OpenShift<br>
+          • Direct automated freight booking APIs
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>Team 4bit</span>
+      <span>Slide 6</span>
+    </div>
+  </div>
+
+</body>
+</html>

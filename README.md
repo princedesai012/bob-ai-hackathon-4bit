@@ -8,8 +8,8 @@
 |---|---|
 | **Team Name** | 4bit |
 | **Track** | AI |
-| **Team Lead** | Prince Desai — 23DCE024@charusat.edu.in |
-| **Members** | Rishi Sheladiya (23CE132), Deep Ardeshna (23DCE004), Pujan Desai (23DCE026) |
+| **Team Lead** | Prince Desai — 23DCE024 (23DCE024@charusat.edu.in) |
+| **Members** | Rishi Sheladiya — 23CE132 (23CE132@charusat.edu.in)<br>Deep Ardeshna — 23DCE004 (23DCE004@charusat.edu.in)<br>Pujan Desai — 23DCE026 (23DCE026@charusat.edu.in) |
 
 ---
 
@@ -41,7 +41,7 @@ SupplyShield AI is a comprehensive platform that aggregates real-time disruption
 |---|---|
 | **Languages** | JavaScript, HTML, CSS |
 | **Frameworks** | React 19, Vite, TailwindCSS v4, Express 5 |
-| **IBM Technologies** | watsonx.ai (Stubbed) |
+| **IBM Technologies** | watsonx.ai (Stubbed), IBM Bob |
 | **Databases** | In-Memory Data Store (NoSQL structured) |
 | **Other** | Node.js, React Router, Recharts |
 

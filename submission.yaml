@@ -41,7 +41,7 @@ submission:
   tech_stack:
     languages: ["JavaScript", "HTML", "CSS"]                      # REQUIRED — e.g., ["Python", "TypeScript"]
     frameworks: ["React 19", "Vite", "TailwindCSS v4", "Express 5"]                     # e.g., ["FastAPI", "React"]
-    ibm_technologies: ["watsonx.ai (Stubbed)"]               # e.g., ["watsonx.ai", "IBM Bob", "IBM Cloud Functions"]
+    ibm_technologies: ["watsonx.ai (Stubbed)", "IBM Bob"]               # e.g., ["watsonx.ai", "IBM Bob", "IBM Cloud Functions"]
     databases: ["In-Memory Store (NoSQL structured)"]                      # e.g., ["PostgreSQL", "Redis"]
     other: ["Node.js", "React Router", "Recharts"]                          # e.g., ["Docker", "GitHub Actions", "Slack API"]
 

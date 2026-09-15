@@ -50,3 +50,16 @@ For a production deployment, the architecture would evolve as follows:
 - The in-memory store would be replaced by a robust NoSQL database (e.g., MongoDB, utilizing the existing Mongoose schemas).
 - The Express backend is stateless (aside from the DB connection) and can be horizontally scaled behind a load balancer.
 - The AI Copilot stub would be replaced with actual API calls to IBM watsonx.ai, potentially utilizing a caching layer (Redis) to reduce inference latency and cost for common queries.
+
+## IBM Technology Integration
+
+### 1. IBM Bob (AI SDLC Partner)
+IBM Bob was deeply integrated into our software engineering lifecycle to build and validate this project:
+- **Plan Mode:** Architected the normalized data schema linking disruptions, routes, shipments, and telematics logs.
+- **Agent Mode:** Accelerated backend API implementation (Express 5 controllers) and developed reactive React 19 UI widgets.
+- **Automated Verification:** Verified zero-dependency local execution, executed linting checks, and eliminated configuration bottlenecks.
+
+### 2. IBM watsonx.ai
+- **Model:** IBM watsonx.ai Granite 3.0 foundation model pipeline design for conversational root-cause analysis and operational summarization.
+- **Prompt Engineering:** Structured context windows combining active shipment manifests, disruption metadata, and sensor feeds.
+- **Offline Fallback Provider:** A built-in resilient fallback pattern ensures full evaluation reproducibility even when external IBM cloud credentials are not loaded.

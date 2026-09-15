@@ -1,26 +1,11 @@
-# Screenshots
+# Application Screenshots — SupplyShield AI
 
-Place your application screenshots in this folder.
+The following screenshots capture SupplyShield AI running live in a local environment:
 
-## Naming Convention
-
-Name your screenshots sequentially so they appear in logical order:
-
-  01-landing-page.png       ← First thing a user sees
-  02-main-feature.png       ← Your primary feature in action
-  03-output-or-results.png  ← The result / value delivered
-  04-additional-feature.png ← Any other notable screen
-
-## Requirements
-
-- Minimum: 3 screenshots
-- Format: PNG or JPG
-- Show the application running with real (or realistic mock) data
-- Avoid screenshots of empty states or placeholder data
-- Captions are not required but appreciated
-
-## Tips
-
-- Use a consistent browser window size across all screenshots
-- Highlight key UI elements with arrows/circles if helpful (use any image editor)
-- Include a screenshot showing IBM technology integration if applicable
+| Filename | Description | Key Elements Shown |
+|---|---|---|
+| `01-home-dashboard.png` | **Executive Command Center** | Real-time KPI cards (Active Disruptions, Critical Shipments, Cargo Value At Risk ₹6.5M, Fleet Utilization), Active Disruptions table, priority alerts |
+| `02-query-input.png` | **AI Copilot Query Interface** | Natural language supply chain prompt input, recommended quick prompts |
+| `03-result-output.png` | **AI Copilot Risk Analysis Output** | Instant risk evaluation, critical shipment identification (SHP-1024, SHP-4112), score factors, rerouting recommendation |
+| `04-shipments-tracking.png` | **Active Shipments & Risk Index** | Complete shipment manifest with dynamic risk scores (0–100), urgency badges, cold-chain status |
+| `05-cold-chain-monitoring.png` | **IoT Cold Chain Excursion Monitor** | Real-time sensor temperature tracking, excursion alerts, temperature tolerance bands |
