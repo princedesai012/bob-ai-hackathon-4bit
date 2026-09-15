@@ -8,7 +8,7 @@
 |---|---|
 | **Team Name** | 4bit |
 | **Track** | AI |
-| **Team Lead** | Prince Desai — 23DCE024@example.com |
+| **Team Lead** | Prince Desai — 23DCE024@charusat.edu.in |
 | **Members** | Rishi Sheladiya (23CE132), Deep Ardeshna (23DCE004), Pujan Desai (23DCE026) |
 
 ---
