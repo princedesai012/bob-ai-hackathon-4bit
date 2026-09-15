@@ -71,7 +71,7 @@ SupplyShield AI is a comprehensive platform that aggregates real-time disruption
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/drijesh-ppatel/bob-ai-hackathon-4bit.git
+git clone https://github.com/princedesai012/bob-ai-hackathon-4bit.git
 cd bob-ai-hackathon-4bit
 
 # 2. Run the Backend
