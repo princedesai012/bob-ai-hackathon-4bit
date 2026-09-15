@@ -1,79 +1,82 @@
 # Setup Guide
 
-> **This file is read by the automated evaluation pipeline. Be precise and complete.**
+This guide provides the exact steps to install and run the SupplyShield AI prototype locally.
 
 ## Prerequisites
 
-Before you begin, ensure you have the following installed:
+- **Node.js**: v18.0.0 or higher
+- **npm**: v9.0.0 or higher
+- **Git**
 
-- [ ] [e.g., Python 3.11+]
-- [ ] [e.g., Node.js 18+]
-- [ ] [e.g., Docker Desktop]
-- [ ] [e.g., An IBM Cloud account with watsonx.ai access]
+*(No external database is required as the prototype uses an in-memory store).*
 
-## Environment Variables
+## Installation & Running
 
-Copy `.env.example` to `.env` and fill in the values:
+Follow these steps exactly in a fresh terminal.
+
+### 1. Clone the Repository
 
 ```bash
+git clone https://github.com/drijesh-ppatel/bob-ai-hackathon-4bit.git
+cd bob-ai-hackathon-4bit
+```
+
+### 2. Setup Environment Variables
+
+```bash
+# Backend
+cd src/backend
+cp .env.example .env
+
+# Frontend
+cd ../frontend
 cp .env.example .env
 ```
+*(The default values in `.env.example` are pre-configured to work locally out-of-the-box).*
 
-| Variable | Description | Required |
-|---|---|---|
-| `WATSONX_API_KEY` | Your IBM watsonx.ai API key | Yes |
-| `WATSONX_PROJECT_ID` | Your watsonx.ai project ID | Yes |
-| `DATABASE_URL` | PostgreSQL connection string | Yes |
-| `SLACK_WEBHOOK_URL` | Slack webhook for alerts | No |
+### 3. Start the Backend Server
 
-## Installation
+Open a terminal and run:
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/[your-org]/[your-repo].git
-cd [your-repo]
-
-# 2. Install backend dependencies
-[your command — e.g.: pip install -r requirements.txt]
-
-# 3. Install frontend dependencies (if applicable)
-[your command — e.g.: cd frontend && npm install]
-
-# 4. Set up the database (if applicable)
-[your command — e.g.: python manage.py migrate]
+cd src/backend
+npm install
+npm run dev
+```
+*Expected Output:*
+```
+🚀 SupplyShield AI backend running on http://localhost:5000
+📦 Using in-memory data store (no MongoDB required)
 ```
 
-## Running the Application
+### 4. Start the Frontend Server
+
+Open a second, separate terminal and run:
 
 ```bash
-# Start the backend
-[your command — e.g.: uvicorn app.main:app --reload]
-
-# Start the frontend (in a separate terminal, if applicable)
-[your command — e.g.: cd frontend && npm run dev]
+cd src/frontend
+npm install
+npm run dev
+```
+*Expected Output:*
+```
+  VITE v6.1.1  ready in 1500 ms
+  ➜  Local:   http://localhost:5173/
 ```
 
-The application will be available at: `http://localhost:[PORT]`
+## How to Verify It's Working
 
-## Running Tests
-
-```bash
-[your test command — e.g.: pytest tests/ -v]
-```
-
-## Quick Demo (Optional)
-
-If you have a demo script or sample data to showcase the project quickly:
-
-```bash
-[e.g.: python demo/seed_demo_data.py]
-[e.g.: open http://localhost:8000/demo]
-```
+1. Open your browser and navigate to `http://localhost:5173`.
+2. You should see the login screen.
+3. Login using the default credentials:
+   - **Email:** `ops@supplyshield.ai`
+   - **Password:** `password123`
+4. You should be redirected to the Dashboard showing active disruptions and KPI metrics.
 
 ## Troubleshooting
 
-| Issue | Solution |
-|---|---|
-| [e.g., `ModuleNotFoundError`] | [e.g., Run `pip install -r requirements.txt` again] |
-| [e.g., Database connection refused] | [e.g., Ensure PostgreSQL is running: `docker compose up db`] |
-| [e.g., watsonx.ai 401 error] | [e.g., Check `WATSONX_API_KEY` in your `.env` file] |
+| Error | Cause | Solution |
+|---|---|---|
+| `Cannot read properties of undefined` in Frontend | Backend is not running | Ensure the backend terminal is running on port 5000. |
+| `EADDRINUSE: address already in use :::5000` | Port 5000 is blocked | Kill the existing process on port 5000 or change `PORT` in `src/backend/.env` |
+| `npm install` fails | Incompatible Node version | Ensure you are using Node.js v18 or higher. |
